@@ -1,0 +1,82 @@
+﻿.product-background {
+    margin-bottom: 10px;
+}
+
+.container {
+    margin-bottom: 20px;
+}
+
+.size-lane {
+    background-color: darkgrey;
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+    .size-lane .size {
+        margin-right: 0px;
+        width: 50px;
+        background-color: #202020;
+        color: whitesmoke;
+        text-align: right;
+    }
+
+    .size-lane label {
+        margin-right: 10px;
+    }
+
+.slider {
+    position: relative;
+    padding-top: 35%;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+}
+
+    .slider > img {
+        position: absolute;
+        top: 0;
+        left: 20%;
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    .slider input[name='slide_switch'] {
+        display: none;
+    }
+
+    .slider lable {
+        margin: 18px 0 0 18px;
+        border: 3px solid #999;
+        float: left;
+        cursor: pointer;
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        opacity: 0.6;
+    }
+
+        .slider lable img {
+            display: block;
+        }
+    /*add click effect*/
+    .slider input[name='slide_switch']:checked + label {
+        border-color: #666;
+        opacity: 1;
+    }
+
+    /*Clicking any thumbnail now should change its opacity(style)*/
+    /*Time to work on the main images*/
+    .slider input[name='slide_switch'] ~ img {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    /*That hides all main images at a 110% size
+On click the images will be displayed at normal size to complete the effect
+*/
+    .slider input[name='slide_switch']:checked + label + img {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+/*Clicking on any thumbnail now should activate the image related to it*/
